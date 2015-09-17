@@ -1,4 +1,5 @@
-__author__ = '1002475'
+__author__ = 'torres'
+#-*- coding: utf-8-*-
 
 from xml.dom.minidom import parse, parseString
 
@@ -7,7 +8,7 @@ class BookMgr:
         self.val = 0
 
 
-    # XML file -> DOM
+    # 1. load data : XML file -> DOM
     def LoadXMLFromFile(self, filePath):
         print("...file path is : " + filePath)
 
@@ -30,4 +31,19 @@ class BookMgr:
             return data_dom  # success
 
         return None
+
+    # 2. print raw data (XML format <- DOM)
+    def PrintDOMtoXML(self, booksDoc):
+        print("...booksDoc(DOM data) to XML format and print")
+
+        if self._checkDocument(booksDoc):
+            print( booksDoc.toxml() )
+
+
+    ## check data is None or not
+    def _checkDocument(self, booksDoc):
+        if booksDoc == None:
+            print("[error] booksDoc data is empty")
+            return False
+        return True
 

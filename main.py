@@ -1,4 +1,5 @@
-__author__ = '1002475'
+__author__ = 'torres'
+#-*- coding: utf-8-*-
 
 import ManagementSystem
 
@@ -11,7 +12,8 @@ BooksDoc = None # loading data(DOM)
 def printMenu():
     print("\n =====Book Management System=====")
     print("=========Menu==========")
-    print("- l : load xml")
+    print("- l : load XML data -> DOM")
+    print("- p : print raw XML <- DOM")
     print("- q : quit")
     print("=======================")
 
@@ -27,6 +29,9 @@ def launcherFunction(menu):
     elif menu == 'q':
         loopFlag = -1  # exit program
         print("quit")
+
+    elif menu == 'p':
+        instance_ManagementSystem.PrintDOMtoXML(BooksDoc)
 
     else:
         print("error : unknown menu key")
