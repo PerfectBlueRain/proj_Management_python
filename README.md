@@ -13,3 +13,8 @@
 > instance_ManagementSystem.LoadXMLFromFile(filePath)    # using class function 
 
 ```
+- LoadXMLFromFile()
+	- file IO 파일IO
+	- try, except, else 예외처리
+	- parse() : from xml.dom.minidom import parse, parseString
+	- global BooksDoc에 파일에서 불러온 데이터를 저장

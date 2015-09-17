@@ -5,6 +5,7 @@ import ManagementSystem
 ###global
 loopFlag = 1
 instance_ManagementSystem = ManagementSystem.BookMgr() # load class instance
+BooksDoc = None # loading data(DOM)
 
 ### function
 def printMenu():
@@ -17,10 +18,11 @@ def printMenu():
 def launcherFunction(menu):
     global loopFlag
     global instance_ManagementSystem
+    global BooksDoc
 
     if menu == 'l':
         filePath = str(raw_input('-input the XML file path that you want to load : '))
-        instance_ManagementSystem.LoadXMLFromFile(filePath)
+        BooksDoc = instance_ManagementSystem.LoadXMLFromFile(filePath)
 
     elif menu == 'q':
         loopFlag = -1  # exit program
